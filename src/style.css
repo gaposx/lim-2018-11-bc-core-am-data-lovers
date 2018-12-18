@@ -72,20 +72,21 @@ select {
 }
 
 .card {
-	height: 350px;
-	width: 200px;
+	height: 280px;
+	width: 180px;
   background: #39394a;
   border-radius: 6px;
   padding: 10px;
   border: 5px solid #9494a4;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	text-align: center;
+	margin: 5px;
 }
 
 .pokemon-name {
     text-transform: capitalize;
 		color: #f66a6a;
-		font-size: 1.2rem;
+		font-size: 1rem;
 }
 
 .pokemon-image {
@@ -96,8 +97,13 @@ select {
   text-align: center;
 }
 
+.pokemon-type-header {
+	font-size: 0.8rem;
+	color: #ffffff;
+}
+
 .pokemon-type {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #ffffff;
 }
 
@@ -106,4 +112,9 @@ select {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+}
+
+p {
+	margin: 0;
+    padding: 0;
 }

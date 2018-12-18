@@ -15,15 +15,20 @@ const createPokeCard = (pokemon) => {
   cardImage.appendChild(image);
   card.appendChild(cardImage);
 
+  // debugger
   const cardTypes = document.createElement("DIV");
-  const types = document.createElement("P");
-  types.setAttribute("class","pokemon-type");
-  
-  var allTypes = "";
-  pokemon.type.forEach(type => allTypes += type + ', ')
-  types.innerHTML = "Tipo: " + allTypes;
-  
-  cardTypes.appendChild(types);
+  const typeHeader = document.createElement("P");
+  typeHeader.setAttribute("class","pokemon-type-header");
+  typeHeader.innerHTML = "Tipo";
+  cardTypes.appendChild(typeHeader);
+
+  pokemon.type.forEach(type => {
+    const types = document.createElement("P");
+    types.setAttribute("class","pokemon-type");
+    types.innerHTML = type;
+    cardTypes.appendChild(types);
+  });
+
   card.appendChild(cardTypes);
 
   return card;
