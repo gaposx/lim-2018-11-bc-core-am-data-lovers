@@ -4,7 +4,7 @@ const createPokeCard = (pokemon) => {
   const cardName = document.createElement("DIV");
   const name = document.createElement("H3");
   name.setAttribute("class","pokemon-name");
-  name.innerHTML = pokemon.name;
+  name.innerHTML = parseInt(pokemon.num) + ". " + pokemon.name;
   cardName.appendChild(name);
   card.appendChild(cardName);
 
