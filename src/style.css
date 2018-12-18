@@ -70,3 +70,40 @@ select {
 	border-bottom: 1px solid #0000006b;
 	border-left: none;
 }
+
+.card {
+	height: 350px;
+	width: 200px;
+  background: #39394a;
+  border-radius: 6px;
+  padding: 10px;
+  border: 5px solid #9494a4;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+}
+
+.pokemon-name {
+    text-transform: capitalize;
+		color: #f66a6a;
+		font-size: 1.2rem;
+}
+
+.pokemon-image {
+	max-width: 100%;
+}
+
+.pokemon-stats, .pokemon-name, .pokemon-type-header {
+  text-align: center;
+}
+
+.pokemon-type {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.pokedex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
