@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="header">
-      <h1>Pokémon</h1>
-    </div>
-    <div class="col-2">
-        <div class="col-12" id="sortBy">
-            <label for="sortBySelect" class="col-12">Ordernar por:</label>
-            <select id="sortBySelect" class="col-12">
-                <option value="num" selected>Número</option>
-              <option value="name" selected>Nombre</option>
-              <!-- <option value="egg">Km. por huevo</option>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>Pokémon</h1>
+  </div>
+  <div class="col-2">
+    <div class="col-12" id="sortBy">
+      <label for="sortBySelect" class="col-12">Ordernar por:</label>
+      <select id="sortBySelect" class="col-12">
+        <option value="num" selected>Número</option>
+        <option value="name" selected>Nombre</option>
+        <!-- <option value="egg">Km. por huevo</option>
               <option value="weak">Debilidades</option> -->
-            </select>
-          </div>
-        <div class="col-12" id="sortDirection" >
-          <label for="sortDirectionSelect" class="col-12">Dirección:</label>
-          <select id="sortDirectionSelect" class="col-12">
-            <option value="ASC" selected>Ascendente</option>
-            <option value="DESC">Descendente</option>
-          </select>
-        </div>
-        <div class="col-12" id="search">
+      </select>
+    </div>
+    <div class="col-12" id="sortDirection">
+      <label for="sortDirectionSelect" class="col-12">Dirección:</label>
+      <select id="sortDirectionSelect" class="col-12">
+        <option value="ASC" selected>Ascendente</option>
+        <option value="DESC">Descendente</option>
+      </select>
+    </div>
+    <div class="col-12" id="filterBy">
+        <label for="filterBySelect" class="col-12">Filtrar por tipo:</label>
+        <select id="filterBySelect" class="col-12">
+          <!-- <option value="num" selected>Número</option>
+          <option value="name" selected>Nombre</option> -->
+        </select>
+      </div>
+    <!-- <div class="col-12" id="search">
           <label for="searchInput" class="col-12">Filtrar:</label>
           <input type="text" id="searchInput" class="col-12">
-        </div>
-    </div>
-    <!-- Pokemon Card -->
-    <div class="pokedex col-10" id="pokedex">
-    </div>
-    
-    <!-- div class="footer">
+        </div> -->
+  </div>
+  <!-- Pokemon Card -->
+  <div class="pokedex col-10" id="pokedex">
+  </div>
+
+  <!-- div class="footer">
       <p>Resize the browser window to see how the content respond to the resizing.</p>
     </div -->
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <script src="./data/pokemon/pokemon.js"></script>
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+  <!-- <script src="./data/injuries/injuries.js"></script> -->
+  <script src="./data/pokemon/pokemon.js"></script>
+  <!-- <script src="./data/steam/steam.js"></script> -->
+  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+  <!-- <script src="./data/lol/lol.js"></script> -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
