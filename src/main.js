@@ -35,10 +35,27 @@ const createPokeCard = (pokemon) => {
 }
 
 const startPokedex = () => {
-  POKEMON.pokemon.forEach(pokemon => {
+  const pokemonData = [...POKEMON.pokemon];
+  const pokemonTypes = new Set();
+  pokemonData.forEach(pokemon => {
+    pokemon.type.forEach(type => {
+      pokemonTypes.add(type);
+    })
     let card = createPokeCard(pokemon);
-    const pokedex = document.getElementById("pokedex").appendChild(card);
+    document.getElementById("pokedex").appendChild(card);
   });
+  listPokemonTypes(pokemonTypes)
+}
+
+const listPokemonTypes = (types) => {
+  const typeSelect = document.getElementById('filterBySelect');
+  types.forEach(type => {
+    const option = document.createElement("OPTION");
+    option.setAttribute("value",type.toString().toLowerCase());
+    option.innerHTML = type.toString();
+    typeSelect.appendChild(option);
+  });
+  
 }
 
 startPokedex();
