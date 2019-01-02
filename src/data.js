@@ -10,18 +10,17 @@ const filterData = (data, condition) => {
       });
     }
   }
-
   return filteredData;
 };
 
-const sortData = (data, sortBy, sortOrder) => {
-  return sortedData;
-};
+// const sortData = (data, sortBy, sortOrder) => {
+//   return sortedData;
+// };
 
-const computeStats = (data) => {
-  return computedData;
-};
+// const computeStats = (data) => {
+//   return computedData;
+// };
 
 window.filterData = filterData;
-window.sortData = sortData;
-window.computeStats = computeStats;
+// window.sortData = sortData;
+// window.computeStats = computeStats;

@@ -1,4 +1,4 @@
-const typeSelect = document.getElementById('filterBySelect');
+const typeSelect = document.getElementById('filter-by-select');
 const pokemonData = [...POKEMON.pokemon];
 
 const createPokeCard = (pokemon) => {
@@ -66,14 +66,13 @@ const addPokemonTypes = (types) => {
 }
 
 typeSelect.addEventListener('change', (evt) => {
-  const condition = {'type': 'Grass'}
+  const condition = {'type': evt.target.value.toString()}
   const filteredPokemon = filterData(pokemonData, condition);
   document.getElementById("pokedex").innerHTML = '';
   createPokedex(filteredPokemon);
 });
 
 startPokemon();
-
 
 // const newCard = createPokeCard("");
 // const pokedex = document.getElementById("pokedex").appendChild(newCard);

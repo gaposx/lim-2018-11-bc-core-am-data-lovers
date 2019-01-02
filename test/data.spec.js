@@ -6,7 +6,7 @@ describe('filterData', () => {
     expect(typeof filterData).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  // it('returns `example`', () => {
+  //   expect(example()).toBe('example');
+  // });
 });

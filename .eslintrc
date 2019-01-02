@@ -1,12 +1,15 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "parserOptions": {
     "ecmaVersion": 6
   },
   "extends": "eslint:recommended",
   "globals": {
-    "example": false
+    "example": false,
+    "POKEMON": false,
+    "filterData": false
   }
 }
