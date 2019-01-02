@@ -1,3 +1,6 @@
+const typeSelect = document.getElementById('filterBySelect');
+const pokemonData = [...POKEMON.pokemon];
+
 const createPokeCard = (pokemon) => {
   const card = document.createElement("DIV");
   card.setAttribute("class", "card");
@@ -34,31 +37,42 @@ const createPokeCard = (pokemon) => {
   return card;
 }
 
-const startPokedex = () => {
-  const pokemonData = [...POKEMON.pokemon];
+const startPokemon = () => {
+  createPokedex(pokemonData);
   const pokemonTypes = new Set();
-  pokemonData.forEach(pokemon => {
-    pokemon.type.forEach(type => {
+
+  pokemonData.forEach(element => {
+    element.type.forEach(type => {
       pokemonTypes.add(type);
-    })
-    let card = createPokeCard(pokemon);
-    document.getElementById("pokedex").appendChild(card);
+    }) 
   });
-  listPokemonTypes(pokemonTypes)
+  addPokemonTypes(pokemonTypes)
 }
 
-const listPokemonTypes = (types) => {
-  const typeSelect = document.getElementById('filterBySelect');
+const createPokedex = (pokemon) => {
+  pokemon.forEach(element => {
+    let card = createPokeCard(element);
+    document.getElementById("pokedex").appendChild(card);
+  });
+}
+
+const addPokemonTypes = (types) => {
   types.forEach(type => {
     const option = document.createElement("OPTION");
-    option.setAttribute("value",type.toString().toLowerCase());
+    option.setAttribute("value",type.toString());
     option.innerHTML = type.toString();
     typeSelect.appendChild(option);
   });
-  
 }
 
-startPokedex();
+typeSelect.addEventListener('change', (evt) => {
+  const condition = {'type': 'Grass'}
+  const filteredPokemon = filterData(pokemonData, condition);
+  document.getElementById("pokedex").innerHTML = '';
+  createPokedex(filteredPokemon);
+});
+
+startPokemon();
 
 
 // const newCard = createPokeCard("");

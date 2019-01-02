@@ -2,15 +2,14 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 
 const filterData = (data, condition) => {
-  // let 
-
-  // for (pokemon in data) {
-  //   if (pokemon.hasOwnProperty('type') && )
-  // }
-  // console.log(data);
-  // var filteredData = [...data];
-  // filteredData.pokemon.push("new value");
-  // console.log(filteredData);
+  let filteredData = [...data];
+  if (condition.hasOwnProperty('type')) {
+    if (condition.type != 'all') {
+      filteredData = data.filter(element => {
+        return element.type.includes(condition.type)
+      });
+    }
+  }
 
   return filteredData;
 };
