@@ -13,14 +13,43 @@ const filterData = (data, condition) => {
   return filteredData;
 };
 
-// const sortData = (data, sortBy, sortOrder) => {
-//   return sortedData;
-// };
+const compareByName = (a,b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+}
+
+const compareByNum = (a,b) => {
+  if (parseInt(a.num) < parseInt(b.num)) {
+    return -1;
+  }
+  if (parseInt(a.num) > parseInt(b.num)) {
+    return 1;
+  }
+  return 0;
+}
+
+const sortData = (data, sortBy, sortOrder) => {
+  let sortedData = [...data];
+  if (sortBy === 'name') {
+    sortedData.sort(compareByName);
+  } else if (sortBy === 'num') {
+    sortedData.sort(compareByNum);
+  }
+  if(sortOrder === 'DESC') {
+    sortedData.reverse();
+  }
+  return sortedData;
+};
 
 // const computeStats = (data) => {
 //   return computedData;
 // };
 
 window.filterData = filterData;
-// window.sortData = sortData;
+window.sortData = sortData;
 // window.computeStats = computeStats;
