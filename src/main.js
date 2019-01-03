@@ -1,5 +1,8 @@
 const typeSelect = document.getElementById('filter-by-select');
+const sortSelect = document.getElementById('sort-by-select');
+const sortDirectionSelect = document.getElementById('sort-direction-select');
 const pokemonData = [...POKEMON.pokemon];
+let currentPokemonData = [...POKEMON.pokemon];
 
 const createPokeCard = (pokemon) => {
   const card = document.createElement("DIV");
@@ -38,10 +41,10 @@ const createPokeCard = (pokemon) => {
 }
 
 const startPokemon = () => {
-  createPokedex(pokemonData);
+  createPokedex(currentPokemonData);
   const pokemonTypes = new Set();
 
-  pokemonData.forEach(element => {
+  currentPokemonData.forEach(element => {
     element.type.forEach(type => {
       pokemonTypes.add(type);
     }) 
@@ -67,12 +70,24 @@ const addPokemonTypes = (types) => {
 
 typeSelect.addEventListener('change', (evt) => {
   const condition = {'type': evt.target.value.toString()}
-  const filteredPokemon = filterData(pokemonData, condition);
+  currentPokemonData = pokemonData;
+  currentPokemonData = filterData(currentPokemonData, condition);
+  sortSelects();
   document.getElementById("pokedex").innerHTML = '';
-  createPokedex(filteredPokemon);
+  createPokedex(currentPokemonData);
 });
 
-startPokemon();
+const sortSelects = () => {
+  const sortBy = sortSelect.value.toString();
+  const sortDirection = sortDirectionSelect.value.toString();
+  
+  currentPokemonData = sortData(currentPokemonData, sortBy, sortDirection);
+  
+  document.getElementById("pokedex").innerHTML = '';
+  createPokedex(currentPokemonData);
+}
 
-// const newCard = createPokeCard("");
-// const pokedex = document.getElementById("pokedex").appendChild(newCard);
+sortSelect.addEventListener('change', sortSelects);
+sortDirectionSelect.addEventListener('change', sortSelects);
+
+startPokemon();

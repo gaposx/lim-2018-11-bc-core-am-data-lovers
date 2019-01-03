@@ -10,6 +10,8 @@
   "globals": {
     "example": false,
     "POKEMON": false,
-    "filterData": false
+    "filterData": false,
+    "sortData": false,
+    "computeStats": false
   }
 }
